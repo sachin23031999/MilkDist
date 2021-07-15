@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/customerFragment">
+
+    <fragment
+        android:id="@+id/customerFragment"
+        android:name="com.sachin.milkdistributor.fragments.CustomerFragment"
+        android:label="customer_fragment"
+        tools:layout="@layout/customer_fragment" >
+        <action
+            android:id="@+id/action_customerFragment_to_fetchCowBuffFragment2"
+            app:destination="@id/fetchCowBuffFragment2" />
+        <action
+            android:id="@+id/action_customerFragment_to_customerDetailsFragment"
+            app:destination="@id/customerDetailsFragment" />
+        <action
+            android:id="@+id/action_customerFragment_to_archivedCustomerFragment"
+            app:destination="@id/archivedCustomerFragment" />
+        <action
+            android:id="@+id/action_customerFragment_to_priceFragment"
+            app:destination="@id/priceFragment" />
+        <action
+            android:id="@+id/action_customerFragment_to_dailyDistributionFragment"
+            app:destination="@id/dailyDistributionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fetchCowBuffFragment2"
+        android:name="com.sachin.milkdistributor.fragments.FetchCowBuffFragment"
+        android:label="fetch_cow_buff"
+        tools:layout="@layout/fetch_cow_buff" >
+        <action
+            android:id="@+id/action_fetchCowBuffFragment2_to_customerFragment"
+            app:destination="@id/customerFragment" />
+        <action
+            android:id="@+id/action_fetchCowBuffFragment2_to_customerFragment2"
+            app:popUpTo="@id/customerFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/customerDetailsFragment"
+        android:name="com.sachin.milkdistributor.fragments.CustomerDetailsFragment"
+        android:label="customer_details_fragment"
+        tools:layout="@layout/customer_details_dialog" >
+        <argument
+            android:name="customer"
+            app:argType="com.sachin.milkdistributor.dataModels.Customer" />
+    </dialog>
+    <fragment
+        android:id="@+id/archivedCustomerFragment"
+        android:name="com.sachin.milkdistributor.fragments.ArchivedCustomerFragment"
+        android:label="fragment_archive_customer"
+        tools:layout="@layout/archive_customer_fragment" >
+        <action
+            android:id="@+id/action_archivedCustomerFragment_to_customerFragment"
+            app:destination="@id/customerFragment" />
+        <action
+            android:id="@+id/action_archivedCustomerFragment_to_customerDetailsFragment"
+            app:destination="@id/customerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/priceFragment"
+        android:name="com.sachin.milkdistributor.fragments.PriceFragment"
+        android:label="price_fragment"
+        tools:layout="@layout/price_fragment" />
+    <fragment
+        android:id="@+id/dailyDistributionFragment"
+        android:name="com.sachin.milkdistributor.fragments.DailyDistributionFragment"
+        android:label="daily_dist_fragment"
+        tools:layout="@layout/daily_dist_fragment" >
+        <action
+            android:id="@+id/action_dailyDistributionFragment_to_customerFragment"
+            app:destination="@id/customerFragment" />
+        <argument
+            android:name="dailyDistList"
+            app:argType="com.sachin.milkdistributor.dataModels.DailyDistList" />
+        <action
+            android:id="@+id/action_dailyDistributionFragment_to_filterDialog"
+            app:destination="@id/filterDialog" />
+        <argument
+            android:name="milkTypeFilter"
+            app:argType="string" />
+        <argument
+            android:name="DateFilter"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/filterDialog"
+        android:name="com.sachin.milkdistributor.fragments.FilterDialog"
+        android:label="filter_dialog"
+        tools:layout="@layout/filter_dialog" >
+        <action
+            android:id="@+id/action_filterDialog_to_dailyDistributionFragment"
+            app:destination="@id/dailyDistributionFragment" />
+        <argument
+            android:name="milkTypeList"
+            app:argType="com.sachin.milkdistributor.utils.arguments.ListString" />
+        <argument
+            android:name="dateList"
+            app:argType="com.sachin.milkdistributor.utils.arguments.ListString" />
+    </dialog>
+</navigation>

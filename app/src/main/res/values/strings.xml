@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Milk Distributor</string>
+    <string name="archive_confirmation">Archive this customer?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unArchive_confirmation">Unarchive this customer?</string>
+    <string name="DeliveryConfirmation">Are you sure?</string>
+</resources>
