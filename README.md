@@ -1,1 +1,1 @@
-Android App form MilkDistAPI
+Milk distrubution Android application
